@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function getdata()
+        {
+            var x = new XMLHttpRequest();
+            x.onreadystatechange = function () {
+                //alert(x.readyState);
+                if (x.readyState == 4 && x.status == 200) {
+                    document.getElementById("hid").innerHTML = x.responseText;
+                }
+            };
+            x.open("GET", "data.txt", true);
+            x.send();
+        }
+        </script>
+</head>
+<body>
+    <input type="button"value="loaddata"onclick="getdata()"/>
+    <p>
+        <h3 id="hid">get data from file using ajax</h3>
+        </p>
+</body>
+</html>

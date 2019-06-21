@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        var jsondata = "", myobj = "";
+        var xhttp =new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                jsondata = xhttp.responseText;
+                getcountry();
+            }
+
+        };
+        xhttp.open("GET", "content.txt", true);
+        xhttp.send();
+        function getcountry()
+        {
+            //alert(jsondata);
+            myobj = JSON.parse(jsondata);
+            var cntname = "<option>select country</option>";
+            for(var i=0;i<myobj.country.length;i++)
+            {
+                cntname += "<option value="+myobj.country[i].cid+">" + myobj.country[i].cname + "</option>";
+            }
+            document.getElementById("cnt").innerHTML = cntname;
+        }
+       function getstate()
+        {
+           alert(jsondata);
+            var stname = "<option>select state</option>";
+            for(i=0;i<myobj.state[i].length;i++)
+            {
+                stname += "<option value="+myobj.state[i].sid+">" + myobj.state[i].sname + "</option>";
+            }
+            document.getElementById("st").innerHTML
+        }
+        </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>country</td>
+            <td><select id="cnt"onchange="getstate()"></select></td>
+            </tr>
+
+        <tr>
+            <td>state</td>
+            <td><select id="st"></select></td>
+            </tr>
+
+        <tr>
+            <td>city<td>
+            <td><select id="ct"></select></td>
+        </tr>
+        </table>
+
+</body>
+</html>
