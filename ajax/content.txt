@@ -1,0 +1,2 @@
+﻿
+{"country":[{"cid":1,"cname":"India"},{"cid":2,"cname":"England"},{"cid":3,"cname":"pakistan"}],"state":[{"sid":1,"sname":"Maharashtra","cid":1},{"sid":2,"sname":"Gujrat","cid":1},{"sid":3,"sname":"England_st1","cid":2},{"sid":4,"sname":"pk_st1","cid":3}],"city":[{"ctid":1,"ctname":"pune","sid":1},{"ctid":2,"ctname":"eng_ct1","sid":3},{"ctid":3,"ctname":"lahore","sid":4}]}
